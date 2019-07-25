@@ -1,12 +1,28 @@
+<div class="container ">
+<div class="panel panel-default">
+<div class="pannel-body">
+ <div class=" col-md-4">
 <form [formGroup]="form" novalidate>
  
- <input type="text" name="FirstName" [(ngModel)]="v.FirstName" formControlName="FirstName"/>
+ <div class="form-group">
+  <input type="text" class="form-control" name="FirstName" [(ngModel)]="v.FirstName" formControlName="FirstName"/>
  <div class="errMessages mb-3" *ngIf="VulFormValid">
                         <div *ngIf="form.controls.FirstName.hasError('required') && !form.controls.FirstName.valid">
                           <i>First name  is required.</i>
                         </div>
-                      </div> 
-<p>{{v.FirstName}}</p>
-
-<button type="submit" (click)="sub(v)">submit</button>
+                      </div>
+ </div> 
+<!--<p>{{v |json}}</p>-->
+<div class="form-group">
+<button type="submit" class="btn btn-defalut" (click)="sub(v)">submit</button>
+</div>
 </form>
+ </div>
+ </div>
+
+</div>
+
+
+
+</div>
+
