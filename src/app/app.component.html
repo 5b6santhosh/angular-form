@@ -1,19 +1,59 @@
 <div class="container ">
 <div class="panel panel-default">
-<div class="pannel-body">
- <div class=" col-md-4">
+<div class="pannel-body"><br/>
+ <div class="col-md-4">
 <form [formGroup]="form" novalidate>
  
  <div class="form-group">
+    <label>FirstName</label>
   <input type="text" class="form-control" name="FirstName" [(ngModel)]="v.FirstName" formControlName="FirstName"/>
  <div class="errMessages mb-3" *ngIf="VulFormValid">
                         <div *ngIf="form.controls.FirstName.hasError('required') && !form.controls.FirstName.valid">
-                          <i>First name  is required.</i>
+                          <i>FirstName  is required.</i>
                         </div>
                       </div>
  </div> 
+
+ <div class="form-group">
+    <label>LastName</label>
+  <input type="text" class="form-control" name="LastName" [(ngModel)]="v.LastName" formControlName="LastName"/>
+ <div class="errMessages mb-3" *ngIf="VulFormValid">
+                        <div *ngIf="form.controls.LastName.hasError('required') && !form.controls.LastName.valid">
+                          <i>LastName  is required.</i>
+                        </div>
+                      </div>
+ </div>
+
+ <div class="form-group">
+    <label>Email</label>
+  <input type="text" class="form-control" name="Email" [(ngModel)]="v.Email" formControlName="Email"/>
+ <div class="errMessages mb-3" *ngIf="VulFormValid">
+                        <div *ngIf="form.controls.Email.hasError('required') && !form.controls.Email.valid">
+                          <i>Email  is required.</i>
+                        </div>
+                      </div>
+ </div>
+
+ <div class="form-group">
+   <label>MobileNumber</label>
+  <input type="text" class="form-control" name="MobileNumber" [(ngModel)]="v.MobileNumber" formControlName="MobileNumber"/>
+ <div class="errMessages mb-3" *ngIf="VulFormValid">
+                        <div *ngIf="form.controls.MobileNumber.hasError('required') && !form.controls.MobileNumber.valid">
+                          <i>MobileNumber  is required.</i>
+                        </div>
+                      </div>
+ </div>
+ <div class="form-group">
+   <label>LandLineNumber</label>
+  <input type="text" class="form-control" name="LandLineNumber" [(ngModel)]="v.LandLineNumber" formControlName="LandLineNumber"/>
+ <div class="errMessages mb-3" *ngIf="VulFormValid">
+                        <div *ngIf="form.controls.LandLineNumber.hasError('required') && !form.controls.MobileNumber.valid">
+                          <i>LandLineNumber  is required.</i>
+                        </div>
+                      </div>
+ </div>
 <!--<p>{{v |json}}</p>-->
-<div class="form-group">
+<div class="form-group text-center">
 <button type="submit" class="btn btn-defalut" (click)="sub(v)">submit</button>
 </div>
 </form>
