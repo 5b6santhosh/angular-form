@@ -1,6 +1,6 @@
 import { Component ,OnInit} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import  {Fire} from './values';
+import  { Fire} from './values';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   LastName: new FormControl('', [Validators.required]),
   Email: new FormControl('', [Validators.required]),
   MobileNumber:new FormControl('',[Validators.required]),
-  LandLineNumber:new FormControl('',[Validators.required]),
+  LandLineNumber:new FormControl('',[Validators.required])
 
   });
   sub(v){
@@ -32,7 +32,9 @@ export class AppComponent implements OnInit {
     }
     else {
       this.VulFormValid = false;
-      alert(JSON.stringify(v));
+      //alert(JSON.stringify(v));
+      console.log(v);
+      this.form.reset();
     }
   }
 }
