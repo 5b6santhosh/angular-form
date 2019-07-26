@@ -7,15 +7,18 @@
  <div class="form-group">
     <label>FirstName</label>
   <input type="text"   class="form-control" name="FirstName" [(ngModel)]="v.FirstName" formControlName="FirstName" />
- <div class="errMessages mb-3" *ngIf="VulFormValid">
+ <div class="text-danger" *ngIf="VulFormValid">
                         <div *ngIf="form.controls.FirstName.hasError('required') && !form.controls.FirstName.valid">
                           <i>FirstName  is required.</i>
                         </div>
  <div *ngIf="form.controls.FirstName.hasError('minlength')">
     Name must be at least 3 characters long.
   </div>
+  <div *ngIf="form.controls.FirstName.hasError('maxlength')">
+    Max length 20 Alphabets allowed.
+  </div>
   <div *ngIf="form.controls.FirstName.hasError('pattern')">
-    Alphabets only accepted characters .
+    Accepted  only characters .
   </div>
                       </div>
  </div> 
@@ -23,17 +26,26 @@
  <div class="form-group">
     <label>LastName</label>
   <input type="text" class="form-control" name="LastName" [(ngModel)]="v.LastName" formControlName="LastName"/>
- <div class="errMessages mb-3" *ngIf="VulFormValid">
+ <div class="text-danger" *ngIf="VulFormValid">
                         <div *ngIf="form.controls.LastName.hasError('required') && !form.controls.LastName.valid">
                           <i>LastName  is required.</i>
                         </div>
+   <div *ngIf="form.controls.LastName.hasError('minlength')">
+    Name must be at least 3 characters long.
+  </div>
+  <div *ngIf="form.controls.LastName.hasError('maxlength')">
+    Max length 20 Alphabets allowed.
+  </div>
+  <div *ngIf="form.controls.LastName.hasError('pattern')">
+    Accepted  only characters .
+  </div>
                       </div>
  </div>
 
  <div class="form-group">
     <label>Email</label>
   <input type="text" class="form-control" name="Email" [(ngModel)]="v.Email" formControlName="Email"/>
- <div class="errMessages mb-3" *ngIf="VulFormValid">
+ <div class="text-danger" *ngIf="VulFormValid">
                         <div *ngIf="form.controls.Email.hasError('required') && !form.controls.Email.valid">
                           <i>Email  is required.</i>
                         </div>
@@ -43,19 +55,40 @@
  <div class="form-group">
    <label>MobileNumber</label>
   <input type="text" class="form-control" name="MobileNumber" [(ngModel)]="v.MobileNumber" formControlName="MobileNumber"/>
- <div class="errMessages mb-3" *ngIf="VulFormValid">
+ <div class="text-danger" *ngIf="VulFormValid">
                         <div *ngIf="form.controls.MobileNumber.hasError('required') && !form.controls.MobileNumber.valid">
                           <i>MobileNumber  is required.</i>
                         </div>
+               <div *ngIf="form.controls.MobileNumber.hasError('minlength')">
+    Number must be at least 10 Digits.
+  </div>
+  <div *ngIf="form.controls.MobileNumber.hasError('maxlength')">
+    Max length 10 digits allowed.
+  </div>
+  <div *ngIf="form.controls.MobileNumber.hasError('pattern')">
+    Accepted  only Numbers .
+  </div>
+  
+
                       </div>
  </div>
  <div class="form-group">
    <label>LandLineNumber</label>
   <input type="text" class="form-control" name="LandLineNumber" [(ngModel)]="v.LandLineNumber" formControlName="LandLineNumber"/>
- <div class="errMessages mb-3" *ngIf="VulFormValid">
+ <div class="text-danger" *ngIf="VulFormValid">
                         <div *ngIf="form.controls.LandLineNumber.hasError('required') && !form.controls.LandLineNumber.valid">
                           <i>LandLineNumber  is required.</i>
                         </div>
+
+                        <div *ngIf="form.controls.LandLineNumber.hasError('minlength')">
+    Number must be at least 10 Digits.
+  </div>
+  <div *ngIf="form.controls.LandLineNumber.hasError('maxlength')">
+    Max length 10 digits allowed.
+  </div>
+  <div *ngIf="form.controls.LandLineNumber.hasError('pattern')">
+    Accepted  only Numbers .
+  </div>
                       </div>
  </div>
 <p>{{v |json}}</p>

@@ -19,12 +19,11 @@ export class AppComponent implements OnInit {
 
   }
   form= new FormGroup({
-  FirstName: new FormControl('',Validators.compose([Validators.required,Validators.minLength(3),Validators.pattern('^[a-zA-Z \-\']+')])),
-  //FirstName:new FormControl('',[Validators.minLength(3)]),
-  LastName: new FormControl('', [Validators.required]),
+  FirstName: new FormControl('',Validators.compose([Validators.required,Validators.minLength(3),Validators.maxLength(20),Validators.pattern('^[a-zA-Z \-\']+')])),
+  LastName: new FormControl('',Validators.compose([Validators.required,Validators.minLength(3),Validators.maxLength(20),Validators.pattern('^[a-zA-Z \-\']+')])),
   Email: new FormControl('', [Validators.required]),
-  MobileNumber:new FormControl('',[Validators.required]),
-  LandLineNumber:new FormControl('',[Validators.required])
+  MobileNumber:new FormControl('',Validators.compose([Validators.required,Validators.minLength(10),Validators.maxLength(10),Validators.pattern(/^[0-9]/)])),
+  LandLineNumber:new FormControl('',Validators.compose([Validators.required,Validators.minLength(12),Validators.maxLength(12),Validators.pattern(/^[0-9]/)]))
 
   });
   sub(v){
