@@ -19,7 +19,8 @@ export class AppComponent implements OnInit {
 
   }
   form= new FormGroup({
-  FirstName: new FormControl('', [Validators.required]),
+  FirstName: new FormControl('',Validators.compose([Validators.required,Validators.minLength(3),Validators.pattern('^[a-zA-Z \-\']+')])),
+  //FirstName:new FormControl('',[Validators.minLength(3)]),
   LastName: new FormControl('', [Validators.required]),
   Email: new FormControl('', [Validators.required]),
   MobileNumber:new FormControl('',[Validators.required]),

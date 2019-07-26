@@ -6,11 +6,17 @@
  
  <div class="form-group">
     <label>FirstName</label>
-  <input type="text" minlength="5" class="form-control" name="FirstName" [(ngModel)]="v.FirstName" formControlName="FirstName"/>
+  <input type="text"   class="form-control" name="FirstName" [(ngModel)]="v.FirstName" formControlName="FirstName" />
  <div class="errMessages mb-3" *ngIf="VulFormValid">
                         <div *ngIf="form.controls.FirstName.hasError('required') && !form.controls.FirstName.valid">
                           <i>FirstName  is required.</i>
                         </div>
+ <div *ngIf="form.controls.FirstName.hasError('minlength')">
+    Name must be at least 3 characters long.
+  </div>
+  <div *ngIf="form.controls.FirstName.hasError('pattern')">
+    Alphabets only accepted characters .
+  </div>
                       </div>
  </div> 
 
